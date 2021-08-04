@@ -36,6 +36,7 @@ module.exports = {
   outputDir: path.resolve(__dirname, outputDir), // 构建文件输出目录
   assetsDir: 'static', // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录。
   productionSourceMap: false,
+  lintOnSave: false,
   pages: {
     index: {
       entry: 'src/main.ts', // 入口

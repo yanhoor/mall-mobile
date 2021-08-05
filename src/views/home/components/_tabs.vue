@@ -1,5 +1,5 @@
 <template>
-  <Tabbar v-model="activeTab">
+  <Tabbar v-model="activeTab" route>
     <TabbarItem v-for="tab of tabs" :key="tab.name" :icon="tab.icon" :to="tab.to">
       {{ tab.name }}
     </TabbarItem>
@@ -23,6 +23,11 @@
           name: '首页',
           icon: 'home-o',
           to: '/index',
+        },
+        {
+          name: '搜索',
+          icon: 'search',
+          to: '/search',
         },
         {
           name: '我的',

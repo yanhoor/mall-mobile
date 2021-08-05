@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent, reactive, provide } from 'vue'
+  import { defineComponent, reactive, ref, provide, onActivated, onDeactivated } from 'vue'
   import { PullRefresh } from 'vant'
   import IndexModel from './config/model'
   import Swiper from './components/_swiper.vue'
@@ -31,11 +31,21 @@
     },
     setup(){
       const model = reactive<IndexModel>(new IndexModel())
+      const lastScrollTop = ref(0)
       provide('model', model)
       model.initData()
 
+      onActivated(() => {
+        document.documentElement.scrollTop = lastScrollTop.value
+      })
+
+      onDeactivated(() => {
+        lastScrollTop.value = document.documentElement.scrollTop
+      })
+
       return {
         model,
+        lastScrollTop,
       }
     },
   })

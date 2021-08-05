@@ -1,7 +1,7 @@
 <template>
   <div class="index_search">
     <img v-lazy="model.conf.logo" v-if="model.conf">
-    <div class="search_container">
+    <div class="search_container" @click="onClickSearch">
       <Icon name="search" size="20" color="#aaa" class="search_icon"></Icon>
       <span class="search_hint">搜索店铺</span>
     </div>
@@ -12,6 +12,7 @@
 <script lang="ts">
   import { defineComponent, inject } from 'vue'
   import { Icon } from 'vant'
+  import { useRouter } from 'vue-router'
   import IndexModel from '../config/model'
 
   export default defineComponent({
@@ -21,9 +22,14 @@
     },
     setup(){
       const model = inject<IndexModel>('model')
+      const router = useRouter()
+      const onClickSearch = () => {
+        router.push('/search')
+      }
 
       return {
         model,
+        onClickSearch,
       }
     },
   })

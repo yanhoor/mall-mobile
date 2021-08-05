@@ -1,6 +1,12 @@
 <template>
   <div class="home_container">
-    <router-view />
+    <router-view #="{ Component }">
+      <transition>
+        <keep-alive>
+          <component :is="Component"></component>
+        </keep-alive>
+      </transition>
+    </router-view>
     <Tabs></Tabs>
   </div>
 </template>

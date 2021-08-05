@@ -1,24 +1,15 @@
 # mall-mobile
 
-## Project setup
-```
-yarn install
-```
+[对应管理系统](https://github.com/yanhoor/mall-web), [对应后端接口](https://github.com/yanhoor/koa2-elm)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## 技术栈
 
-### Compiles and minifies for production
-```
-yarn build
-```
+`Vue3 + Vuex + Vue-router + Vue-cli + TypeScript + Vant + Less`
 
-### Lints and fixes files
-```
-yarn lint
-```
+## 运行
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```
+npm i
+
+npm run serve_dev
+```
